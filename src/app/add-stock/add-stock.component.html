@@ -1,0 +1,39 @@
+<div id="addStock" class="modal">
+    <div class="modal-content">
+        <div class="h-10 w-100">
+            <div class="pull-right close" (click)="closeAddPopUp()">&times;</div>
+        </div>
+        <div class="h-80">
+            <table class="w-100">
+                <tr class="form-option">
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Inventory</td>
+                    <td>Price </td>
+                    <td>Active </td>
+                </tr>
+                <tr [formGroup]="newStock" class="form-option">
+                    <td><input class="add-border"
+                            [ngClass]="newStock.controls.name.invalid && newStock.controls.name.touched ? 'has-danger' : 'has-success'"
+                            type="text" formControlName="name" /></td>
+                    <td><input class="add-border" type="text" formControlName="desc" /></td>
+                    <td><input class="add-border"
+                            [ngClass]="newStock.controls.inventory.invalid && newStock.controls.inventory.touched ? 'has-danger' : 'has-success'"
+                            type="number" formControlName="inventory" /></td>
+                    <td><input class="add-border"
+                            [ngClass]="newStock.controls.price.invalid && newStock.controls.price.touched ? 'has-danger' : 'has-success'"
+                            type="number" formControlName="price" /></td>
+                    <td>
+                        <mat-slide-toggle formControlName="active"></mat-slide-toggle>
+                    </td>
+                    <mat-icon class="hand" (click)="saveRecord(newStock)"
+                        [ngClass]="newStock.controls.name.valid && newStock.controls.inventory.valid && newStock.controls.price.valid ? 'click' : 'no-click'">
+                        save</mat-icon>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+</div>

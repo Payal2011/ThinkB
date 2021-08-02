@@ -1,0 +1,52 @@
+.img-card{
+    position: absolute;
+    margin: 5px;
+}
+.img-block{
+    width: 350px;
+    height: 200px;
+}
+.first{
+    z-index: 10;
+}
+.sec{
+    top: 60px;
+    left: 300px;
+    z-index: 8;
+}
+.third{
+    left: 30px;
+    top: 42%;
+    z-index: 9;
+}
+.forth{
+    top: 53%;
+    left: 310px;
+    z-index: 7;
+}
+ .fifth{
+    top: 58%;
+    left: 5px;
+    z-index: 6;
+}
+.home-qoutes{
+    margin: 40% 25%;
+}
+.elementToFadeInAndOut {
+    opacity: 1;
+    animation:  0.5s linear fade;
+}
+
+@keyframes fade {
+  
+  100% { opacity: 0.7 }
+}
+.go{
+    position: absolute;
+    right: 17%;
+    bottom: 33%;
+    background: #1F3C63;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}

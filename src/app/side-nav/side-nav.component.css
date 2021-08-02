@@ -1,0 +1,85 @@
+nav{
+    top:0;
+    position: fixed;
+    z-index: 1030;
+    height: 50px;
+}
+.hamb-bars{
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    padding: 5px;
+}
+.bars{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 4px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    background: whitesmoke;
+    z-index: 12;
+    width: 0;
+    box-shadow: 1px 0px 2px 0px lightgrey;
+    transition: all 0.3s ease 0s;
+}
+
+.menu{
+    display: flex;
+    margin: 15px 10px;
+}
+.menu:hover{
+    background:#244572;
+}
+.menu > div{
+    margin: 6px 6px;
+}
+.menu >  mat-icon{
+    margin: 4px;
+}
+
+mat-toolbar {
+    background: #1F3C63;
+    color: white;
+}
+
+mat-sidenav {
+
+    width: 160px;
+    border-right: none;
+    background: #1F3C63;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+.brand{
+    padding: 4px 15px;
+}
+.content {
+    height: calc(100vh - 75px);
+    font-family: "Bradley Hand ITC" !important;
+    font: initial;
+    margin-left: 5px;
+    justify-content: center;
+    align-items: center;
+    color: grey !important;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.header-options > mat-icon{
+    margin: 10px 3px;
+    cursor: pointer;
+}
+
+

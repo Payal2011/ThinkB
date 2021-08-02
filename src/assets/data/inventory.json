@@ -1,0 +1,57 @@
+[
+	{
+		"id": 1,
+		"name": "Dell",
+		"desc": "Laptop",
+		"code": 2309,
+		"inventory": 2,
+		"comments": "",
+		"price": 500,
+		"active": false,
+		"created": "01-07-2020"
+	},
+	{
+		"id": 2,
+		"name": "Dell2",
+		"desc": "Lap-top",
+		"code": 2309,
+		"inventory": 0,
+		"comments": "",
+		"price": 300,
+		"active": false,
+		"created": "01-07-2020"
+	},
+	{
+		"id": 3,
+		"name": "One+",
+		"desc": "Phone",
+		"code": 2309,
+		"inventory": 9,
+		"comments": "",
+		"price": 22,
+		"active": true,
+		"created": "01-07-2020"
+	},
+	{
+		"id": 4,
+		"name": "Iphone",
+		"desc": "phone",
+		"code": 2309,
+		"inventory": 0,
+		"comments": "",
+		"price": 1002,
+		"active": false,
+		"created": "01-07-2020"
+	},
+	{
+		"id": 5,
+		"name": "ipad",
+		"desc": "tablet",
+		"code": 2309,
+		"inventory": 2,
+		"comments": "",
+		"price": 202,
+		"active": true,
+		"created": "01-07-2020"
+	}
+]

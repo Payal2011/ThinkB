@@ -1,0 +1,30 @@
+<div class="h-100">
+    <div class="h-100 display-flex">
+        <div class="h-100 w-55">
+            <div *ngFor="let img of images" class="img-card {{img.class}}">
+                <img src="{{img.src}}" alt="{{img.alt}}" class="img-block">
+            </div>
+        </div>
+        <div class="h-100 w-45">
+
+            <div *ngIf="show1stDiv" class="elementToFadeInAndOut home-qoutes text-center m-30">
+                <div class="f-40 font-weight-bold">Inventory</div>
+                <div class="text-gry f-25">
+                    Can Be Managed
+                </div>
+            </div>
+            <div *ngIf="!show1stDiv" class="elementToFadeInAndOut home-qoutes text-center m-30">
+                <div class="f-40 font-weight-bold">Stock</div>
+                <div class="text-gry f-25">
+                    Better Stock Control
+                </div>
+            </div>
+
+            <div mat-button title="View Inventory" class="menu-button hand menu go" (click)="goToInventory()">
+                <div>View Inventory </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

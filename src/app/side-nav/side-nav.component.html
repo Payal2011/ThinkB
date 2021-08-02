@@ -1,0 +1,37 @@
+<mat-toolbar>
+    <div *ngIf="!showOverlay" class="header-options" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>
+            menu
+        </mat-icon>
+    </div>
+    <div *ngIf="showOverlay" class="header-options" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>
+            close
+        </mat-icon>
+    </div>
+
+    <div class="m-0 f-20 brand font-bradley">{{appTitle}}</div>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" [(opened)]="showOverlay" class="mat-elevation-z8">
+        <div mat-button class="menu-button hand menu" (click)="openHome()">
+            <mat-icon>home</mat-icon>
+            <div>Home</div>
+        </div>
+        <div mat-button class="menu-button hand menu" (click)="openStock()">
+            <mat-icon>table_chart</mat-icon>
+            <div>Stock</div>
+        </div>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

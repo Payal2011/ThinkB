@@ -1,0 +1,93 @@
+<div class="h-100">
+    <div class="header header-options h-10">
+        <div class="pull-left display-flex">
+            <div class="text-left f-20 m-20 bold">Stock</div>
+            <div class="m-20"><input placeholder="search..." style="border-bottom: 1px solid gray;" type="text"
+                    class="search" (keyup)="filter($event.target.value)" /></div>
+            <div class="m-20">
+                Rows:
+                <select (change)="displayRecords($event.target.value)">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="100">100</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class=" pull-right display-flex mr-4">
+            <div mat-button title="Add" class="menu-button hand menu" (click)="addRecord()">
+                <mat-icon>add</mat-icon>
+                <div>Add </div>
+            </div>
+            <div mat-button title="Download to CSV" class="menu-button hand menu" (click)="buildTable(true)">
+                <a id="downloadAnchorElem" style="display:none"></a>
+                <mat-icon>download</mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="h-75 table-display">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Inventory</th>
+                    <th>Price</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [formGroup]="row" *ngFor="let row of inventory.controls;let i = index">
+                    <td>
+                        <input class="form-control" style="pointer-events: none;" formControlName="name"
+                            [ngClass]="row.controls.name.invalid ? 'has-danger' : 'has-success'" />
+                    </td>
+                    <td>
+                        <input class="form-control" style="pointer-events: none;" formControlName="desc" />
+                    </td>
+                    <td>
+                        <input type="number" disabled style="pointer-events: none;" class="form-control"
+                            [ngClass]="row.controls.inventory.invalid ? 'has-danger' : 'has-success'"
+                            formControlName="inventory" />
+                    </td>
+                    <td>
+                        <input type="number" disabled style="pointer-events: none;" class="form-control"
+                            [ngClass]="row.controls.price.invalid ? 'has-danger' : 'has-success'"
+                            formControlName="price" />
+                    </td>
+                    <td>
+                        <mat-slide-toggle class="form-control" style="pointer-events: none;" formControlName="active">
+                        </mat-slide-toggle>
+                    </td>
+                    <td>
+                        <mat-icon class="hand" (click)="deleteRecord(row.value)">delete</mat-icon>
+                        <mat-icon class="hand" style="display: none;" (click)="saveRecord(row.value,$event.path)"
+                            [ngClass]="row.controls.name.valid && row.controls.inventory.valid && row.controls.price.valid ? 'click' : 'no-click'">
+                            save</mat-icon>
+                        <mat-icon class="hand" (click)="editRecord($event.path)">edit
+                        </mat-icon>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="h-10 display-flex">
+        <div id="prev-arrow" class="w-25 f-30 bold hand text-center" (click)="prevRecord()">
+            <mat-icon class="hand">arrow_back_ios</mat-icon>
+        </div>
+        <div class="w-50 text-center">showing <span class="bold">{{display}}</span> of <span
+                class="bold">{{totalRecord}}
+            </span> results</div>
+        <div id="next-arrow" class="w-25 f-30 bold hand text-center " (click)="nextRecord()">
+            <mat-icon class="hand">arrow_forward_ios</mat-icon>
+        </div>
+    </div>
+</div>
+
+<app-add-stock *ngIf="showAddPopUp" (getPopUpStatus)="getPopUpStatusValue($event)"
+    (getSavedStatus)="getRecordStatus($event)"></app-add-stock>
