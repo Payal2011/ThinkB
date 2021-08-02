@@ -7,7 +7,7 @@ import json
 import sqlite3
 
 
-database = '../../../../inventory.db'
+database = '../../inventory.db'
 
 app = Flask(__name__)
 api = Api(app)
