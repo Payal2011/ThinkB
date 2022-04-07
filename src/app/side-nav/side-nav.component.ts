@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SideNavComponent implements OnInit {
 
   constructor(private router: Router) { }
-  appTitle = "ThinkBridge"
+  appTitle = "ThinkB"
   showOverlay: boolean = true;
   opened: boolean;
   @ViewChild(MatSidenav)
